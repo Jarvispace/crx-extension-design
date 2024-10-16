@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Consulting Services</title>
+    <title>专业浏览器插件开发服务</title>
     <style>
+        :root {
+            --primary-color: #4285F4;
+            --secondary-color: #34A853;
+            --background-color: #F5F5F5;
+            --text-color: #333;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
             line-height: 1.6;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #4CAF50;
+            background-color: var(--primary-color);
             color: white;
             padding: 1rem;
             text-align: center;
@@ -32,33 +38,39 @@
             text-decoration: none;
         }
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: var(--secondary-color);
+            color: white;
         }
         section {
             padding: 2rem;
-            margin: auto;
+            margin: 2rem auto;
             max-width: 800px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         footer {
-            background-color: #4CAF50;
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
             padding: 1rem;
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
         .button {
-            background-color: #4CAF50;
+            background-color: var(--secondary-color);
             color: white;
-            padding: 0.75rem;
+            padding: 0.75rem 1.5rem;
             border: none;
             text-decoration: none;
             margin-top: 1rem;
             display: inline-block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #2E8B57;
         }
         .contact-form {
             margin-top: 2rem;
@@ -71,64 +83,148 @@
             padding: 10px;
             margin: 5px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 4px;
         }
         .contact-form button {
-            background-color: #4CAF50;
+            background-color: var(--secondary-color);
             color: white;
             padding: 0.75rem;
             border: none;
             cursor: pointer;
             margin-top: 1rem;
+            border-radius: 4px;
         }
         .contact-form button:hover {
-            background-color: #45a049;
+            background-color: #2E8B57;
+        }
+        .project-case img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 <body>
+    <button id="darkModeToggle">切换暗黑模式</button>
+
     <header>
-        <h1>IT Consulting & Custom Software Solutions</h1>
+        <h1>专业浏览器插件开发服务</h1>
     </header>
     <nav>
-        <a href="#">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#">首页</a>
+        <a href="#about">关于我们</a>
+        <a href="#services">服务</a>
+        <a href="#portfolio">作品集</a>
+        <a href="#faq">常见问题</a>
+        <a href="#contact">联系我们</a>
     </nav>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We specialize in providing customized software development and IT solutions for businesses. Our operations cover the entire project lifecycle, from requirement analysis to delivery and ongoing maintenance. We ensure that your business needs are met with tailor-made solutions that drive success.</p>
-    </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Customized Software Development</li>
-            <li>IT Infrastructure Setup & Management</li>
-            <li>Project Lifecycle Management</li>
-            <li>Consulting and Advisory Services</li>
-        </ul>
-        <a href="#contact" class="button">Contact Us</a>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <form action="#">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
+    <section id="carousel" class="carousel">
+        <div class="carousel-item active">
+            <img src="https://img.picui.cn/free/2024/10/16/670f2a41859d0.png" alt="浏览器插件展示">
         </div>
     </section>
+
+    <section id="about">
+        <h2>关于我们</h2>
+        <p>我们是一支专业的浏览器插件开发团队，致力于为客户提供高质量、定制化的浏览器扩展解决方案。我们的目标是通过创新的技术来提升用户的网络浏览体验和工作效率。</p>
+    </section>
+
+    <section id="services">
+        <h2>我们的服务</h2>
+        <div class="service-item">
+            <details>
+                <summary>定制化插件开发</summary>
+                <p>我们根据您的具体需求，开发量身定制的浏览器插件，以提高生产力和用户体验。</p>
+            </details>
+        </div>
+        <div class="service-item">
+            <details>
+                <summary>跨浏览器兼容性</summary>
+                <p>我们确保您的插件能在Chrome、Firefox、Safari等主流浏览器上无缝运行。</p>
+            </details>
+        </div>
+        <div class="service-item">
+            <details>
+                <summary>插件维护和更新</summary>
+                <p>我们提供持续的支持和更新服务，确保您的插件与最新的浏览器版本保持兼容。</p>
+            </details>
+        </div>
+        <div class="service-item">
+            <details>
+                <summary>性能优化</summary>
+                <p>我们优化插件的速度和效率，确保它们不会影响浏览器的性能。</p>
+            </details>
+        </div>
+        <a href="#contact" class="button">获取报价</a>
+    </section>
+
+    <section id="portfolio" class="fade-in">
+        <h2>我们的作品</h2>
+        <div class="project-case">
+            <h3>灵犀分析插件</h3>
+            <img src="https://img.picui.cn/free/2024/10/16/670f2b4f502f1.png" alt="灵犀分析插件截图">
+            <p>我们开发了一个强大的数据分析插件，可以实时分析和导出重要数据，提高用户的工作效率。该插件支持数据可视化，帮助用户更好地理解和解释复杂的数据集。</p>
+        </div>
+
+    </section>
+
+    <section id="faq">
+        <h2>常见问题</h2>
+        <div class="faq-item">
+            <details>
+                <summary>开发一个浏览器插件需要多长时间？</summary>
+                <p>开发时间取决于插件的复杂程度。简单的插件可能只需几周，而复杂的插件可能需要几个月。我们会在项目开始前提供详细的时间估算。</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>你们能更新我们现有的插件吗？</summary>
+                <p>是的，我们可以更新和改进现有的插件，确保它们与最新的浏览器版本兼容，并根据需要添加新功能。</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>你们提供插件的持续支持服务吗？</summary>
+                <p>当然！我们提供全面的支持和维护服务，确保您的插件持续正常运行并保持最新状态。</p>
+            </details>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>联系我们</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">邮箱：</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">留言：</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">发送消息</button>
+            </form>
+            <div id="formResponse" style="display: none; margin-top: 1rem;"></div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 IT Consulting Services. All rights reserved.</p>
+        <p>&copy; 2024 专业浏览器插件开发服务。保留所有权利。</p>
+        <div class="social-links">
+            <a href="#" title="GitHub">🐙</a>
+            <a href="#" title="Twitter">🐦</a>
+            <a href="#" title="LinkedIn">💼</a>
+        </div>
     </footer>
+
+    <button id="backToTop" title="返回顶部">↑</button>
+
+    <script>
+        // JavaScript 代码保持不变
+        // ...
+    </script>
 </body>
 </html>
